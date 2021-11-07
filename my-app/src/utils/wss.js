@@ -3,7 +3,7 @@ import { setRoomId, setParticipants } from "../store/actions";
 import store from "../store/store";
 import * as webRTCHandler from "./webRTCHandler";
 
-const SERVER = "http://localhost:5002";
+const SERVER = "http://localhost:3000";
 
 let socket = null;
 
