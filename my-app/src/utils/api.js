@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverApi = "http://localhost:3000/api";
+const serverApi = "https://zoom-12333.herokuapp.com/api";
 
 export const getRoomExists = async (roomId) => {
   const response = await axios.get(`${serverApi}/room-exists/${roomId}`);
