@@ -13,6 +13,11 @@ const server = http.createServer(app);
 
 app.use(express.static(path.join(__dirname, 'my-app')));
 
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'my-app', 'index.html'));
+});
+
+
 app.use(cors());
 
 let connectedUsers = [];
