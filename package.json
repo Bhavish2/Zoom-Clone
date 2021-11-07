@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js",
+    "start":"node my-app/src/App.js",
     "heruko-postbuild":"NPM_CONFIG_PRODUCTION=false npm install npm --prefix my-app && run build --prefix my-app"
   },
   "author": "",
