@@ -216,6 +216,16 @@ const initializeConnectionHandler = (data, socket) => {
   io.to(connUserSocketId).emit("conn-init", initData);
 };
 
+if(process.env.NODE_ENV="production")
+{
+  app.use(express.static("my-app/public"));
+  const path=require("path");
+  app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'my-app','public','index.html'));
+  })
+
+}
+
 server.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
 });
