@@ -8,7 +8,7 @@ const SERVER = "http://localhost:5002";
 let socket = null;
 
 export const connectWithSocketIOServer = () => {
-  socket = io(SERVER);
+  socket = io(SERVER, { transports: ["websocket"] });
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
