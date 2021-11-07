@@ -11,11 +11,11 @@ const app = express();
 const server = http.createServer(app);
 //const server=app.listen(process.env.PORT || 5002);
 
-app.use(express.static(path.join(__dirname, 'my-app')));
+/*app.use(express.static(path.join(__dirname, 'my-app')));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'my-app', 'index.html'));
-});
+});*/
 
 
 app.use(cors());
