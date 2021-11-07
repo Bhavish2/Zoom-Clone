@@ -8,9 +8,7 @@ const SERVER = "http://localhost:5002";
 let socket = null;
 
 export const connectWithSocketIOServer = () => {
-  socket = io(SERVER,{  cors: {
-        origin: "http://localhost:5002",
-        credentials: true }, transports: ["websocket"] });
+  socket = io(SERVER,{ transports: ['polling'] });
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
