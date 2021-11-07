@@ -4,18 +4,18 @@ const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 const twilio = require("twilio");
 const { disconnect } = require("process");
-const path=require("path");
+//const path=require("path");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 const server = http.createServer(app);
 //const server=app.listen(process.env.PORT || 5002);
 
-app.use(express.static(path.join(__dirname, "/my-app/build")));
+/*app.use(express.static(path.join(__dirname, "/my-app/build")));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/my-app/build', 'index.html'));
-});
+});*/
 
 
 app.use(cors());
@@ -216,15 +216,15 @@ const initializeConnectionHandler = (data, socket) => {
   io.to(connUserSocketId).emit("conn-init", initData);
 };
 
-/*if(process.env.NODE_ENV="production")
+if(process.env.NODE_ENV="production")
 {
-  app.use(express.static("my-app/public"));
+ // app.use(express.static("my-app/public"));
   const path=require("path");
-  app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,'my-app','public','index.html'));
+  app.get("/*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'my-app','build','index.html'));
   })
 
-}*/
+}
 
 server.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
