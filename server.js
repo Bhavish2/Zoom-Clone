@@ -4,11 +4,14 @@ const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 const twilio = require("twilio");
 const { disconnect } = require("process");
+const path=require("path");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 const server = http.createServer(app);
 //const server=app.listen(process.env.PORT || 5002);
+
+app.use(express.static(path.join(__dirname, 'my-app')));
 
 app.use(cors());
 
