@@ -5,10 +5,10 @@ const cors = require("cors");
 const twilio = require("twilio");
 const { disconnect } = require("process");
 
-//const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5002;
 const app = express();
-//const server = http.createServer(app);
-const server=app.listen(process.env.PORT || 5002);
+const server = http.createServer(app);
+//const server=app.listen(process.env.PORT || 5002);
 
 app.use(cors());
 
@@ -200,6 +200,6 @@ const initializeConnectionHandler = (data, socket) => {
   io.to(connUserSocketId).emit("conn-init", initData);
 };
 
-/*server.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
-});*/
+});
