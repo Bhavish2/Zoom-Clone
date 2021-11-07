@@ -10,7 +10,7 @@ let socket = null;
 export const connectWithSocketIOServer = () => {
   socket = io(SERVER,{  cors: {
         origin: "http://localhost:5002",
-        credentials: true },{ transports: ["websocket"] });
+        credentials: true }, transports: ["websocket"] });
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
