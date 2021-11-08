@@ -3,7 +3,7 @@ import { setRoomId, setParticipants } from "../store/actions";
 import store from "../store/store";
 import * as webRTCHandler from "./webRTCHandler";
 
-const SERVER = "https://zoom-12333.herokuapp.com";
+const SERVER = "/";
 
 let socket = null;
 
