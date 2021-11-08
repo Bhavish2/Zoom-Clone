@@ -8,7 +8,7 @@ const SERVER = "/";
 let socket = null;
 
 export const connectWithSocketIOServer = () => {
-  socket = io.connect(SERVER,{ transports: ['polling'] });
+  socket = io.connect(SERVER);
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
