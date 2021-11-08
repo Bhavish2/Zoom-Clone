@@ -26,7 +26,7 @@ export const getLocalPreviewAndInitRoomConnection = async (
   onlyAudio
 ) => {
   console.log("1 passed");
-  await fetchTURNCredentials();
+  //await fetchTURNCredentials();
   console.log("2 passed");
 
   const constraints = onlyAudio ? onlyAudioConstraints : defaultConstraints;
