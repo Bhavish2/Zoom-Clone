@@ -8,7 +8,7 @@ const SERVER = "https://zoom-12333.herokuapp.com";
 let socket = null;
 
 export const connectWithSocketIOServer = () => {
-  socket = io(SERVER,{ transports: ['polling'] });
+  socket = io.connect(SERVER,{ transports: ['polling'] });
 
   socket.on("connect", () => {
     console.log("successfully connected with socket io server");
